@@ -14,7 +14,10 @@
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
+    
 }
+
+int num = 0;
 
 -(id)init{
     self = [super init];
@@ -34,9 +37,11 @@
 }
 
 -(void)step{
+    num++;
     [_grid evolveStep];
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
+    NSLog(@"%d", num);
 }
 
 
