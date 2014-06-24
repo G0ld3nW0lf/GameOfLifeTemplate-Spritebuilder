@@ -80,6 +80,6 @@ static const int GRID_COLUMNS = 10;
     int row = touchPosition.x / _cellHeight;
     int col = touchPosition.y / _cellWidth;
     NSLog(@"row: %d, col: %d", row, col);
-    return _gridArray[row][col];
+    return _gridArray[col][row];
 }
 @end
