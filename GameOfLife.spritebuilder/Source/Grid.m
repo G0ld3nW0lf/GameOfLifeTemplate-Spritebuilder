@@ -77,8 +77,8 @@ static const int GRID_COLUMNS = 10;
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
 {
     //get the row and column that was touched, return the Creature inside the corresponding cell
-    int row = touchPosition.x / GRID_ROWS;
-    int col = touchPosition.y / GRID_COLUMNS;
+    int row = touchPosition.x / _cellHeight;
+    int col = touchPosition.y / _cellWidth;
     NSLog(@"row: %d, col: %d", row, col);
     return _gridArray[row][col];
 }
