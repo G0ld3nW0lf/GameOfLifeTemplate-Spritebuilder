@@ -141,4 +141,13 @@ static const int GRID_COLUMNS = 10;
     return isIndexValid;
 }
 
+-(void)updateCreatures{
+    _totalAlive = 0;
+    for(int x = 0; x < [_gridArray count]; x++){
+        for(int y = 0; y < [_gridArray[x] count]; y++){
+            _totalAlive++;
+        }
+    }
+}
+
 @end
