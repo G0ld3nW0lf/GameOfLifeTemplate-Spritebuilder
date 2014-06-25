@@ -126,6 +126,7 @@ static const int GRID_COLUMNS = 10;
             printf("%d ", currentCreature.livingNeighbors);
         }
     }
+    NSLog(@"counted");
 }
 
 - (BOOL)isIndexValidForX:(int)x andY:(int)y
