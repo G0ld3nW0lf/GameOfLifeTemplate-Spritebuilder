@@ -77,8 +77,10 @@ static const int GRID_COLUMNS = 10;
     
     //invert it's state - kill it if it's alive, bring it to life if it's dead.
     creature.isAlive = !creature.isAlive;
-    _gridArray[_x][_y] = creature;
-    NSLog(@"Cell at X:%d Y:%d", _x, _y);
+    //_gridArray[_x][_y] = creature;
+    //NSLog(@"Cell at X:%d Y:%d", _x, _y);
+    Creature *awesome = _gridArray[_x][_y];
+    NSLog(@"state: %d", awesome.isAlive);
 }
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
