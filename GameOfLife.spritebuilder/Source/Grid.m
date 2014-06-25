@@ -135,7 +135,17 @@ static const int GRID_COLUMNS = 10;
     for(int x = 0; x < [_gridArray count]; x++){
         for(int y = 0; y < [_gridArray[x] count]; y++){
             int neighbors = [self countNeighborsOfCellAt:x And:y];
-            NSLog(@"%d", neighbors);
+            Creature *currentCreature = _gridArray[x][y];
+            
+            if(currentCreature.isAlive){
+                if(neighbors < 2 || neighbors > 3){
+                    currentCreature.isAlive = false;
+                }
+            }else{
+                if(neighbors == 3){
+                    currentCreature.isAlive = true;
+                }
+            }
         }
     }
 }
