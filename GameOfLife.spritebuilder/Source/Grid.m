@@ -167,6 +167,7 @@ static const int GRID_COLUMNS = 10;
     //update each Creature's neighbor count
     [self countNeighbors];
     
+    [self printArray];
     //update each Creature's state
     [self updateCreatures];
     
@@ -178,8 +179,9 @@ static const int GRID_COLUMNS = 10;
     for(int i = 0; i < GRID_ROWS; i++){
         for(int j = 0; j < GRID_COLUMNS; j++){
             Creature *cre = _gridArray[i][j];
-            NSLog(@"zd ", (cre.livingNeighbors));
+            printf("%d", (cre.livingNeighbors));
         }
+        printf("\n");
     }
 }
 
