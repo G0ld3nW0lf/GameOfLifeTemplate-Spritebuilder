@@ -137,7 +137,7 @@ static const int GRID_COLUMNS = 10;
 }
 
 -(void)updateCreatures{
-    //NSLog(@"hello");
+    NSLog(@"hello");
     for(int x = 0; x < GRID_ROWS; x++){
         for(int y = 0; y < GRID_COLUMNS; y++){
             
