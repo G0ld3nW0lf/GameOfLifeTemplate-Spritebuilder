@@ -19,4 +19,6 @@
 
 -(void)evolveStep;
 
+-(void)onEnter;
+
 @end
