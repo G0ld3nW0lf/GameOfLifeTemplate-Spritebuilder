@@ -9,12 +9,32 @@
 #import "Grid.h"
 #import "Creature.h"
 
+@interface ClassA : NSObject
+{
+}
+
+-(NSMutableArray*) _gridArray;;
+
+@end
+
+@implementation ClassA
+
+-(NSMutableArray*) _gridArray
+{
+    static NSMutableArray* theArray = nil;
+    if (theArray == nil)
+    {
+        theArray = [[NSMutableArray alloc] init];
+    }
+    return theArray;
+}
+
+@end
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
-    NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
     int _x;
