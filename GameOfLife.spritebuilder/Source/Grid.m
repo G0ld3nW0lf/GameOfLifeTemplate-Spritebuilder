@@ -83,10 +83,11 @@ static const int GRID_COLUMNS = 10;
 }
 
 -(void)evolveStep{
+    NSLog(@"hello");
     [self countNeighbors];
     [self updateCreatures];
     
-    NSLog(@"hello");
+    
     
     _generation++;
 }
