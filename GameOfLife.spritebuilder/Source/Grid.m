@@ -155,6 +155,7 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures
 {
+    int counter = 0;
     for(int i = 0; i < GRID_ROWS; i++){
         
         for(int j = 0; j < GRID_COLUMNS; j++){
@@ -162,9 +163,11 @@ static const int GRID_COLUMNS = 10;
             int neighbors = cre.livingNeighbors;
             
             if(cre.isAlive){
+                
                 if(neighbors < 2 || neighbors > 3)
                     cre.isAlive = false;
                 
+                int counter = 0;
                 
             }else{
                 if(neighbors == 3)
@@ -190,10 +193,12 @@ static const int GRID_COLUMNS = 10;
 }
 
 -(void)printArray{
+
     for(int i = 0; i < GRID_ROWS; i++){
         for(int j = 0; j < GRID_COLUMNS; j++){
             Creature *cre = _gridArray[i][j];
             printf("%d", (cre.livingNeighbors));
+            
         }
         printf("\n");
     }
