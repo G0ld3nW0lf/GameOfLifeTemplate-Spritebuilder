@@ -146,7 +146,7 @@ static const int GRID_COLUMNS = 10;
             Creature *currentCreature = _gridArray[x][y];
             int neighbors = currentCreature.livingNeighbors;
             
-            NSLog(@"state: %d", currentCreature.isAlive);
+            //NSLog(@"state: %d", currentCreature.isAlive);
             if(currentCreature.isAlive){
                 if(neighbors < 2 || neighbors > 3){
                     currentCreature.isAlive = FALSE;
