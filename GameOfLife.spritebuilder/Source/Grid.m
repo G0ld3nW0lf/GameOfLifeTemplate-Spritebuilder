@@ -123,7 +123,7 @@ static const int GRID_COLUMNS = 10;
                     }
                 }
             }
-            NSLog("%d ", currentCreature.livingNeighbors);
+            NSLog(@"%d ", currentCreature.livingNeighbors);
         }
     }
     NSLog(@"counted");
