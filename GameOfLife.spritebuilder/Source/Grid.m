@@ -85,7 +85,8 @@ static const int GRID_COLUMNS = 10;
     return _gridArray[row][col];
 }
 
--(void)countNeighbors{
+-(void)countNeighbors
+{
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     for (int i = 0; i < [_gridArray count]; i++)
@@ -136,7 +137,8 @@ static const int GRID_COLUMNS = 10;
     return isIndexValid;
 }
 
--(void)updateCreatures{
+-(void)updateCreatures
+{
     NSLog(@"hello");
     for(int x = 0; x < GRID_ROWS; x++){
         for(int y = 0; y < GRID_COLUMNS; y++){
@@ -157,7 +159,6 @@ static const int GRID_COLUMNS = 10;
                 }
             }
             
-            _gridArray[x][y] = currentCreature;
         }
     }
 }
