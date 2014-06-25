@@ -17,6 +17,8 @@ static const int GRID_COLUMNS = 10;
     NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
+    int _x;
+    int _y;
 }
 
 -(void)onEnter{
@@ -69,24 +71,26 @@ static const int GRID_COLUMNS = 10;
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self];
     
-    float *x = nil;
-    NSInteger *y = nil;
-    //get the Creature at that location
-    Creature *creature = [self creatureForTouchPosition:touchLocation AndStorePositionXIn:x AndStorePositionYIn:y];
     
-    NSLog(@"x:%f y:%f\n", x, y);
+    //get the Creature at that location
+    Creature *creature = [self creatureForTouchPosition:touchLocation];
+    
     //invert it's state - kill it if it's alive, bring it to life if it's dead.
     creature.isAlive = !creature.isAlive;
+    _gridArray[_x][_y] = creature;
+    NSLog(@"Cell at X:%d Y:%d", _x, _y);
 }
 
-- (Creature *)creatureForTouchPosition:(CGPoint)touchPosition AndStorePositionXIn: (float *)x AndStorePositionYIn: (float *)y
+- (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
 {
     //get the row and column that was touched, return the Creature inside the corresponding cell
-    *x = touchPosition.x / _cellHeight;
-    *y = touchPosition.y / _cellWidth;
+    int col = touchPosition.x / _cellHeight;
+    int row = touchPosition.y / _cellWidth;
     
+    _x = row;
+    _y = col;
     
-    return _gridArray[(int)*x][(int)*y];
+    return _gridArray[row][col];
 }
 
 -(void)countNeighbors
