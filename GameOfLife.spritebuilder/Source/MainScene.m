@@ -11,7 +11,7 @@
 - (id)init
 {
     self = [super init];
-    [_grid init];
+    [_grid evolveStep];
     if (self) {
         _timer = [[CCTimer alloc] init];
     }
@@ -22,18 +22,18 @@
 - (void)play
 {
     //this tells the game to call a method called 'step' every half second.
-    [self schedule:[self step] interval:0.5f];
+    [self schedule:@selector(step) interval:0.5f];
 }
 
 - (void)pause
 {
-    [self unschedule:[self step]];
+    [self unschedule:@selector(step)];
 }
 
 // this method will get called every half second when you hit the play button and will stop getting called when you hi the pause button
-- (SEL)step
+- (void)step
 {
-    [_grid rapper];
+    [_grid evolveStep];
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
 }

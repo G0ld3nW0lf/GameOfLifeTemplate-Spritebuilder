@@ -19,16 +19,6 @@ static const int GRID_COLUMNS = 10;
     float _cellHeight;
 }
 
--(id)init{
-    self = [super init];
-
-    if(self){
-        [self evolveStep];
-    }
-    
-    return self;
-}
-
 -(void)onEnter{
     [super onEnter];
     
@@ -167,9 +157,5 @@ static const int GRID_COLUMNS = 10;
     
     //update the generation so the label's text will display the correct generation
     _generation++;
-}
-
--(void)rapper{
-    [self evolveStep];
 }
 @end

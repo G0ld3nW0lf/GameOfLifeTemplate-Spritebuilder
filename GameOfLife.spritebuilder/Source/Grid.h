@@ -13,8 +13,8 @@
 @property (nonatomic, assign) int totalAlive;
 @property (nonatomic, assign) int generation;
 
--(id)init;
+
 -(void)evolveStep;
--(void)rapper;
+
 
 @end
