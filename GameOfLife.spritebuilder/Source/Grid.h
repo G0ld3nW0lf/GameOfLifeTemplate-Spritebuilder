@@ -15,5 +15,6 @@
 
 -(id)init;
 -(void)evolveStep;
+-(void)rapper;
 
 @end

@@ -169,4 +169,7 @@ static const int GRID_COLUMNS = 10;
     _generation++;
 }
 
+-(void)rapper{
+    [self evolveStep];
+}
 @end
