@@ -28,6 +28,10 @@ static NSMutableArray *_gridArray;
     
     [self setupGrid];
     
+    [self countNeighbors];
+    
+    [self printArray];
+    
     self.userInteractionEnabled = YES;
 }
 
