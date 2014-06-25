@@ -57,7 +57,7 @@ static const int GRID_COLUMNS = 10;
             _gridArray[i][j] = creature;
             
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
-            //creature.isAlive = YES;
+            creature.isAlive = YES;
             
             x+=_cellWidth;
         }
@@ -79,7 +79,7 @@ static const int GRID_COLUMNS = 10;
     creature.isAlive = !creature.isAlive;
     //_gridArray[_x][_y] = creature;
     //NSLog(@"Cell at X:%d Y:%d", _x, _y);
-    Creature *awesome = _gridArray[_x][_y];
+    //Creature *awesome = _gridArray[_x][_y];
     //NSLog(@"state: %d", awesome.isAlive);
 }
 
