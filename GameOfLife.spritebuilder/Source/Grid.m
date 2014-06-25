@@ -148,7 +148,7 @@ static const int GRID_COLUMNS = 10;
     //update each Creature's neighbor count
     [self countNeighbors];
     
-    //[self printArray];
+    [self printArray];
     //update each Creature's state
     [self updateCreatures];
     
