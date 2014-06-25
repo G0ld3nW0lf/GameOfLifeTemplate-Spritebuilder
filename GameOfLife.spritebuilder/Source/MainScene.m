@@ -30,6 +30,7 @@ int num = 0;
 
 -(void)play{
     [self schedule:@selector(step) interval:0.5f];
+    [_grid evolveStep];
 }
 
 -(void)pause{
@@ -38,7 +39,7 @@ int num = 0;
 
 -(void)step{
     num++;
-    [_grid evolveStep];
+    
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
     NSLog(@"%d", num);
