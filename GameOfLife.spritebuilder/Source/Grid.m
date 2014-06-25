@@ -59,7 +59,6 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
-    NSLog(@"heyyy");
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -88,6 +87,10 @@ static const int GRID_COLUMNS = 10;
     [self updateCreatures];
     
     _generation++;
+}
+
+-(void)getCountOfNeighborsAroundCellAt:(int)x And: (int) y{
+    
 }
 
 -(void)countNeighbors{
@@ -127,6 +130,20 @@ static const int GRID_COLUMNS = 10;
                     }
                 }
             }
+            if(currentCreature.isAlive){
+                if(currentCreature.livingNeighbors < 2)
+                    currentCreature.isAlive = FALSE;
+
+                else if(currentCreature.livingNeighbors > 3)
+                    currentCreature.isAlive = FALSE;
+            
+                
+            }else{
+                if(currentCreature.livingNeighbors == 3){
+                    currentCreature.isAlive = TRUE;
+                }
+            }
+            
         }
     }
 }
