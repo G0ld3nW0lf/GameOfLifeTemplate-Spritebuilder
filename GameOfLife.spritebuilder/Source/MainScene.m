@@ -2,7 +2,7 @@
 #import "Grid.h"
 
 @implementation MainScene {
-    Grid *_grid;
+    Grid *_grid = [[Grid alloc] onEnter];
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
@@ -33,7 +33,7 @@
 // this method will get called every half second when you hit the play button and will stop getting called when you hi the pause button
 - (void)step
 {
-    //[_grid evolveStep];
+    [_grid evolveStep];
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
 }
