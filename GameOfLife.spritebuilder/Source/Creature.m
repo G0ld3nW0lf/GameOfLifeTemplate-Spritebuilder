@@ -22,7 +22,7 @@
 }
 
 - (void)setIsAlive:(BOOL)newState {
-    NSLog("im awesome");
+    NSLog(@"im awesome");
     //when you create an @property as we did in the .h, an instance variable with a leading underscore is automatically created for you
     _isAlive = newState;
     
