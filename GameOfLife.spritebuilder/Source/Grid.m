@@ -131,6 +131,7 @@ static const int GRID_COLUMNS = 10;
 }
 
 -(void)updateCreatures{
+    NSLog(@"hello");
     for(int x = 0; x < [_gridArray count]; x++){
         for(int y = 0; y < [_gridArray[x] count]; y++){
             int neighbors = [self countNeighborsOfCellAt:x And:y];
