@@ -59,7 +59,7 @@ static const int GRID_COLUMNS = 10;
             _gridArray[i][j] = creature;
             
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
-            creature.isAlive = YES;
+            //creature.isAlive = YES;
             
             x+=_cellWidth;
         }
@@ -105,10 +105,10 @@ static const int GRID_COLUMNS = 10;
 {
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
-    for (int i = 0; i < GRID_COLUMNS; i++)
+    for (int i = 0; i < [_gridArray count]; i++)
     {
         // iterate through all the columns for a given row
-        for (int j = 0; j < GRID_ROWS; j++)
+        for (int j = 0; j < [_gridArray[i] count]; j++)
         {
             // access the creature in the cell that corresponds to the current row/column
             Creature *currentCreature = _gridArray[i][j];
@@ -139,10 +139,8 @@ static const int GRID_COLUMNS = 10;
                     }
                 }
             }
-            NSLog(@"%d ", currentCreature.livingNeighbors);
         }
     }
-    //NSLog(@"counted");
 }
 
 - (BOOL)isIndexValidForX:(int)x andY:(int)y
