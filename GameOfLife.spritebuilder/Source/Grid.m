@@ -82,15 +82,7 @@ static const int GRID_COLUMNS = 10;
     return _gridArray[row][col];
 }
 
--(void)evolveStep{
-    NSLog(@"hello");
-    [self countNeighbors];
-    [self updateCreatures];
-    
-    
-    
-    _generation++;
-}
+
 
 -(void)getCountOfNeighborsAroundCellAt:(int)x And: (int) y{
     
@@ -170,6 +162,13 @@ static const int GRID_COLUMNS = 10;
         }
     }
     _totalAlive = count;
+}
+
+-(void)evolveStep{
+    NSLog(@"hello");
+    [self countNeighbors];
+    [self updateCreatures];
+    _generation++;
 }
 
 @end
