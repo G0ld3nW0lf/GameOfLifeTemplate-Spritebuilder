@@ -11,7 +11,6 @@
 - (id)init
 {
     self = [super init];
-    [_grid onEnter];
     
     if (self) {
         _timer = [[CCTimer alloc] init];
