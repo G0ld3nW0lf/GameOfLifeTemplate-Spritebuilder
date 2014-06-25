@@ -28,7 +28,7 @@ static const int GRID_COLUMNS = 10;
     
     [self countNeighbors];
     
-    [self printArray];
+    //[self printArray];
     
     self.userInteractionEnabled = YES;
 }
