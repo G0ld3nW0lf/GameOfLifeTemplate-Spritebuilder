@@ -86,6 +86,8 @@ static const int GRID_COLUMNS = 10;
     [self countNeighbors];
     [self updateCreatures];
     
+    NSLog(@"hello");
+    
     _generation++;
 }
 
