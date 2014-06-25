@@ -185,8 +185,6 @@ static const int GRID_COLUMNS = 10;
 -(void)evolveStep{
     //update each Creature's neighbor count
     [self countNeighbors];
-    
-    [self printArray];
     //update each Creature's state
     [self updateCreatures];
     
@@ -195,17 +193,5 @@ static const int GRID_COLUMNS = 10;
     //NSLog(@"x:%d", _x);
 }
 
--(void)printArray{
-
-    for(int i = 0; i < GRID_ROWS; i++){
-        for(int j = 0; j < GRID_COLUMNS; j++){
-            Creature *cre = _gridArray[i][j];
-            printf("%d", (cre.livingNeighbors));
-            
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
 
 @end
