@@ -111,7 +111,7 @@ static const int GRID_COLUMNS = 10;
                 if (neighbor.isAlive)
                 {
                     currentCreature.livingNeighbors += 1;
-                    NSLog("+1");
+                    NSLog(@"+1");
                 }
             }
         }
