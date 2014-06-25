@@ -138,16 +138,17 @@ static const int GRID_COLUMNS = 10;
             
             if(currentCreature.isAlive){
                 if(neighbors < 2 || neighbors > 3){
-                    currentCreature.isAlive = false;
+                    currentCreature.isAlive = FALSE;
                 }
             }else{
                 if(neighbors == 3){
-                    currentCreature.isAlive = true;
+                    currentCreature.isAlive = TRUE;
                 }
             }
+            
+            _gridArray[x][y] = currentCreature;
         }
     }
-    [self setupGrid];
 }
 
 -(void)evolveStep{
