@@ -80,7 +80,7 @@ static const int GRID_COLUMNS = 10;
     //_gridArray[_x][_y] = creature;
     //NSLog(@"Cell at X:%d Y:%d", _x, _y);
     Creature *awesome = _gridArray[_x][_y];
-    NSLog(@"state: %d", awesome.isAlive);
+    //NSLog(@"state: %d", awesome.isAlive);
 }
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
@@ -156,7 +156,7 @@ static const int GRID_COLUMNS = 10;
 
 -(void)evolveStep{
     //update each Creature's neighbor count
-    //[self countNeighbors];
+    [self countNeighbors];
     
     //[self printArray];
     //update each Creature's state
