@@ -79,6 +79,7 @@ static const int GRID_COLUMNS = 10;
     int col = touchPosition.x / _cellHeight;
     int row = touchPosition.y / _cellWidth;
     NSLog(@"row: %d, col: %d", row, col);
+    [self evolveStep];
     return _gridArray[row][col];
 }
 
