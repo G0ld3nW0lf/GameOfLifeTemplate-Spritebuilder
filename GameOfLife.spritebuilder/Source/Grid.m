@@ -172,15 +172,15 @@ static const int GRID_COLUMNS = 10;
 
 -(void)evolveStep{
     //update each Creature's neighbor count
-    [self countNeighbors];
+    //[self countNeighbors];
     
     [self printArray];
     //update each Creature's state
-    [self updateCreatures];
+    //[self updateCreatures];
     
     //update the generation so the label's text will display the correct generation
     _generation++;
-    NSLog(@"x:%d", _x);
+    //NSLog(@"x:%d", _x);
 }
 
 -(void)printArray{
