@@ -155,6 +155,24 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures
 {
+    for(int i = 0; i < GRID_ROWS; i++){
+        
+        for(int j = 0; j < GRID_COLUMNS; j++){
+            Creature *cre = _gridArray[i][j];
+            int neighbors = cre.livingNeighbors;
+            
+            if(cre.isAlive){
+                if(neighbors < 2 || neighbors > 3)
+                    cre.isAlive = false;
+                
+                
+            }else{
+                if(neighbors == 3)
+                    cre.isAlive = true;
+                
+            }
+        }
+    }
     
 }
 
