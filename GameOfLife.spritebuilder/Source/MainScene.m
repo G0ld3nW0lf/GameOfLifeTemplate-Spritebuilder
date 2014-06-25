@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Apportable. All rights reserved.
 //
 
+#import "grid.h"
 #import "MainScene.h"
-#import "Grid.h"
 
 @implementation MainScene{
     Grid *_grid;
