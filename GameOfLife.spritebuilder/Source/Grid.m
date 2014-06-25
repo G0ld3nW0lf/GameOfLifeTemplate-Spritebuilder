@@ -9,10 +9,11 @@
 #import "Grid.h"
 #import "Creature.h"
 
+// these are variables that cannot be changed
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 
-@implementation Grid{
+@implementation Grid {
     NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
@@ -26,7 +27,8 @@ static const int GRID_COLUMNS = 10;
     self.userInteractionEnabled = YES;
 }
 
--(void)setupGrid{
+- (void)setupGrid
+{
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
@@ -52,7 +54,8 @@ static const int GRID_COLUMNS = 10;
             // this is shorthand to access an array inside an array
             _gridArray[i][j] = creature;
             
-            
+            // make creatures visible to test this method, remove this once we know we have filled the grid properly
+            //creature.isAlive = YES;
             
             x+=_cellWidth;
         }
@@ -79,17 +82,11 @@ static const int GRID_COLUMNS = 10;
     int col = touchPosition.x / _cellHeight;
     int row = touchPosition.y / _cellWidth;
     NSLog(@"row: %d, col: %d", row, col);
+    [self updateCreatures];
     return _gridArray[row][col];
 }
 
-
-
--(void)getCountOfNeighborsAroundCellAt:(int)x And: (int) y{
-    
-}
-
 -(void)countNeighbors{
-    NSLog(@"hi");
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     for (int i = 0; i < [_gridArray count]; i++)
@@ -126,20 +123,6 @@ static const int GRID_COLUMNS = 10;
                     }
                 }
             }
-            if(currentCreature.isAlive){
-                if(currentCreature.livingNeighbors < 2)
-                    currentCreature.isAlive = FALSE;
-
-                else if(currentCreature.livingNeighbors > 3)
-                    currentCreature.isAlive = FALSE;
-            
-                
-            }else{
-                if(currentCreature.livingNeighbors == 3){
-                    currentCreature.isAlive = TRUE;
-                }
-            }
-            
         }
     }
 }
@@ -161,13 +144,18 @@ static const int GRID_COLUMNS = 10;
             count++;
         }
     }
-    _totalAlive = count;
+    self.totalAlive = count;
 }
 
 -(void)evolveStep{
     NSLog(@"hello");
+    //update each Creature's neighbor count
     [self countNeighbors];
+    
+    //update each Creature's state
     [self updateCreatures];
+    
+    //update the generation so the label's text will display the correct generation
     _generation++;
 }
 
