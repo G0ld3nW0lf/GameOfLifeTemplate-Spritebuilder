@@ -35,8 +35,8 @@ static const int GRID_COLUMNS = 10;
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
     
-    float x = 0;
-    float y = 0;
+    float x = 10;
+    float y = 10;
     
     // initialize the array as a blank NSMutableArray
     _gridArray = [NSMutableArray array];
@@ -164,6 +164,7 @@ static const int GRID_COLUMNS = 10;
     
     //update the generation so the label's text will display the correct generation
     _generation++;
+    NSLog(@"%d", _x);
 }
 
 -(void)printArray{
