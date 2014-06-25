@@ -167,7 +167,7 @@ static const int GRID_COLUMNS = 10;
                 if(neighbors < 2 || neighbors > 3)
                     cre.isAlive = false;
                 
-                int counter = 0;
+                int counter++;
                 
             }else{
                 if(neighbors == 3)
