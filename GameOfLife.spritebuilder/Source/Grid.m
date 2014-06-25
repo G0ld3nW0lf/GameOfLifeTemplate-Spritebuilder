@@ -26,7 +26,7 @@ static const int GRID_COLUMNS = 10;
     
     [self setupGrid];
     
-    [self countNeighbors];
+    //[self countNeighbors];
     
     //[self printArray];
     
