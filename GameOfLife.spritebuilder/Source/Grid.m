@@ -31,16 +31,6 @@ static const int GRID_COLUMNS = 10;
     self.userInteractionEnabled = YES;
 }
 
--(NSMutableArray*) _gridArray
-{
-    static NSMutableArray* theArray = nil;
-    if (theArray == nil)
-    {
-        theArray = [[NSMutableArray alloc] init];
-    }
-    return theArray;
-}
-
 - (void)setupGrid
 {
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
