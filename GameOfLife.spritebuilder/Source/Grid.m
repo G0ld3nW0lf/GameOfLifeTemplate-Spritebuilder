@@ -140,7 +140,7 @@ static const int GRID_COLUMNS = 10;
                 if(neighbors < 2 || neighbors > 3){
                     currentCreature.isAlive = FALSE;
                 }
-            }else{
+            }else if(!currentCreature.isAlive){
                 if(neighbors == 3){
                     currentCreature.isAlive = TRUE;
                 }
