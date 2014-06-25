@@ -139,28 +139,7 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures
 {
-    NSLog(@"hello");
-    for(int x = 0; x < GRID_ROWS; x++){
-        for(int y = 0; y < GRID_COLUMNS; y++){
-            
-            Creature *currentCreature = _gridArray[x][y];
-            int neighbors = currentCreature.livingNeighbors;
-            
-            //NSLog(@"state: %d", currentCreature.isAlive);
-            if(currentCreature.isAlive){
-                if(neighbors < 2 || neighbors > 3){
-                    currentCreature.isAlive = FALSE;
-                    NSLog(@"false");
-                }
-            }else if(!currentCreature.isAlive){
-                if(neighbors == 3){
-                    currentCreature.isAlive = TRUE;
-                    NSLog(@"true");
-                }
-            }
-            
-        }
-    }
+    
 }
 
 -(void)evolveStep{
