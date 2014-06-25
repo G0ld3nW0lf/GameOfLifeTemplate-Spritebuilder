@@ -174,4 +174,13 @@ static const int GRID_COLUMNS = 10;
     _generation++;
 }
 
+-(void)printArray{
+    for(int i = 0; i < GRID_ROWS; i++){
+        for(int j = 0; j < GRID_COLUMNS; j++){
+            Creature *cre = _gridArray[i][j];
+            NSLog(@"zd ", (cre.livingNeighbors));
+        }
+    }
+}
+
 @end
