@@ -164,7 +164,7 @@ static const int GRID_COLUMNS = 10;
     
     //update the generation so the label's text will display the correct generation
     _generation++;
-    NSLog(@"%d", _x);
+    NSLog(@"x:%d", _x);
 }
 
 -(void)printArray{
