@@ -26,9 +26,7 @@ static const int GRID_COLUMNS = 10;
     
     [self setupGrid];
     
-    //[self countNeighbors];
     
-    //[self printArray];
     
     self.userInteractionEnabled = YES;
 }
@@ -68,6 +66,10 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
+    
+    [self countNeighbors];
+    
+    //[self printArray];
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
